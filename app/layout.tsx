@@ -38,6 +38,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <head>
+        <meta
+          name="google-site-verification"
+          content="2ZMy3SPkmeHkk66S5NxvkvA3vMjVMvJJyEP82Kgg6UY"
+        />
+      </head>
       <body className="bg-slate-900 text-white">
         <SiteAnalytics />
         <SmoothScroll>
