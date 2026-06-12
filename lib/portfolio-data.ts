@@ -11,6 +11,7 @@ export interface PortfolioProject {
   technologies: string[]
   year: string
   client: string
+  featured?: boolean
 }
 
 export const PORTFOLIO_PROJECTS: PortfolioProject[] = [

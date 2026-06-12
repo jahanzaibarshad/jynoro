@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import PortfolioPageContent from '@/components/pages/PortfolioPageContent'
+import { readPortfolio } from '@/lib/data-store'
 
 export const metadata: Metadata = {
   title: 'Our Portfolio | Jynoro',
@@ -22,6 +23,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function PortfolioPage() {
-  return <PortfolioPageContent />
+export default async function PortfolioPage() {
+  const projects = await readPortfolio()
+  return <PortfolioPageContent projects={projects} />
 }

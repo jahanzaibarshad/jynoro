@@ -61,7 +61,7 @@ export default function WhyJynoroSection() {
             <motion.div key={idx} variants={itemVariants} style={{ willChange: 'opacity' }}>
               <Card glass className="h-full transition-transform duration-300 hover:-translate-y-1">
                 <div className="flex h-full flex-col items-center text-center">
-                  <div className="mb-4 inline-flex rounded-2xl border border-cyan-400/40 bg-gradient-to-br from-cyan-500/30 to-indigo-600/25 p-4 shadow-lg shadow-cyan-500/25 ring-1 ring-white/10">
+                  <div className="mb-4 w-fit rounded-2xl border border-cyan-400/40 bg-gradient-to-br from-cyan-500/30 to-indigo-600/25 p-4 shadow-lg shadow-cyan-500/25 ring-1 ring-white/10">
                     <Icon className="h-7 w-7 text-cyan-300" />
                   </div>
                   <h3 className="mb-2 text-lg font-semibold text-white">{benefit.title}</h3>

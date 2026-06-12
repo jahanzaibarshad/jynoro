@@ -105,12 +105,19 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-slate-700/50 pt-8">
-          <motion.div className="flex flex-col md:flex-row items-center justify-between">
-            <p className="text-gray-500 text-sm mb-4 md:mb-0">
-              © {currentYear} Jynoro. All rights reserved.
+          <div className="flex flex-col items-center justify-between gap-2 md:flex-row">
+            <p className="mb-0 text-sm text-gray-500 md:mb-0">
+              © {currentYear} Jynoro. All rights reserved.{' '}
+              <Link
+                href="/admin/login"
+                className="text-slate-800/80 hover:text-slate-600 transition-colors"
+                aria-label="Admin"
+              >
+                ·
+              </Link>
             </p>
-            <p className="text-gray-500 text-sm">Crafted with ❤️ for businesses that want to grow</p>
-          </motion.div>
+            <p className="text-sm text-gray-500">Crafted with ❤️ for businesses that want to grow</p>
+          </div>
         </div>
       </div>
     </footer>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import BlogPageContent from '@/components/pages/BlogPageContent'
+import { readBlogPosts } from '@/lib/data-store'
 
 export const metadata: Metadata = {
   title: 'Blog | Jynoro',
@@ -22,36 +23,7 @@ export const metadata: Metadata = {
   },
 }
 
-const samplePosts = [
-  {
-    slug: 'modern-web-development-2024',
-    title: 'The Complete Guide to Modern Web Development in 2024',
-    excerpt:
-      'Explore the latest technologies and best practices for building fast, secure, and scalable web applications in 2024.',
-    category: 'Web Development',
-    date: 'Jan 15, 2024',
-    readTime: 8,
-  },
-  {
-    slug: 'high-converting-landing-pages',
-    title: '10 Tips for Building High-Converting Landing Pages',
-    excerpt:
-      'Learn the proven strategies to create landing pages that convert visitors into customers and boost your business growth.',
-    category: 'Marketing',
-    date: 'Jan 10, 2024',
-    readTime: 6,
-  },
-  {
-    slug: 'responsive-design-essential',
-    title: 'Why Responsive Design is Essential for Your Business',
-    excerpt:
-      "Discover why responsive design isn't just a nice-to-have feature but a critical requirement for modern web applications.",
-    category: 'Web Design',
-    date: 'Jan 5, 2024',
-    readTime: 5,
-  },
-]
-
-export default function BlogPage() {
-  return <BlogPageContent posts={samplePosts} />
+export default async function BlogPage() {
+  const posts = await readBlogPosts()
+  return <BlogPageContent posts={posts} />
 }

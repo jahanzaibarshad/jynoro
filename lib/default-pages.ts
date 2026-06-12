@@ -1,0 +1,219 @@
+import type { CmsPage } from './page-sections'
+
+export function defaultPages(): CmsPage[] {
+  return [
+    {
+      slug: 'services',
+      path: '/services',
+      title: 'Services',
+      focusKeyword: 'web development services',
+      seoTitle: 'Web Development Services | Jynoro',
+      seoDescription:
+        'Professional web development, custom apps, SEO optimization, and ongoing support. Tailored digital solutions to grow your business online.',
+      sections: [
+        {
+          id: 'svc_header',
+          type: 'page-header',
+          enabled: true,
+          data: {
+            title: 'Our',
+            titleHighlight: 'Services',
+            subtitle: 'Comprehensive web solutions tailored to drive your business growth',
+          },
+        },
+        {
+          id: 'svc_grid',
+          type: 'services-grid',
+          enabled: true,
+          data: {
+            detailed: true,
+            items: [
+              {
+                title: 'Web Development',
+                icon: 'Code2',
+                description: 'Modern, responsive websites built with the latest technologies and best practices.',
+                features: ['Responsive Design', 'Fast Loading Times', 'SEO Optimized', 'Mobile First Approach'],
+                price: 'Starting from $2,000',
+                ctaLabel: 'Get Quote',
+                ctaHref: '/contact',
+              },
+              {
+                title: 'Custom Web Apps',
+                icon: 'Zap',
+                description: 'Tailored web applications for specific business needs and complex requirements.',
+                features: ['Full Stack Development', 'Database Design', 'API Integration', 'Scalable Architecture'],
+                price: 'Starting from $5,000',
+                ctaLabel: 'Get Quote',
+                ctaHref: '/contact',
+              },
+              {
+                title: 'SEO Optimization',
+                icon: 'Search',
+                description: 'Boost your online visibility with our comprehensive SEO strategies.',
+                features: ['Keyword Research', 'On-Page Optimization', 'Technical SEO', 'Content Strategy'],
+                price: 'Starting from $1,000/month',
+                ctaLabel: 'Get Quote',
+                ctaHref: '/contact',
+              },
+            ],
+          },
+        },
+        {
+          id: 'svc_cta',
+          type: 'cta',
+          enabled: true,
+          data: {
+            title: 'Ready to start your project?',
+            description: 'Get a free consultation and custom quote for your web development needs.',
+            buttonLabel: 'Get Free Consultation',
+            buttonHref: '/contact',
+          },
+        },
+      ],
+    },
+    {
+      slug: 'about',
+      path: '/about',
+      title: 'About',
+      focusKeyword: 'web development team',
+      seoTitle: 'About Jynoro | Web Development Team',
+      seoDescription:
+        'Meet Jynoro — a technology-driven team building modern websites and apps. Led by founder Jahanzaib Arshad, we help businesses grow online.',
+      sections: [
+        {
+          id: 'abt_header',
+          type: 'page-header',
+          enabled: true,
+          data: {
+            title: 'About',
+            titleHighlight: 'Jynoro',
+            subtitle:
+              'A young, technology-driven team building modern digital products that help businesses grow with confidence',
+          },
+        },
+        {
+          id: 'abt_stats',
+          type: 'stats',
+          enabled: true,
+          data: {
+            items: [
+              { value: '5+', label: 'Years of Experience', icon: 'Briefcase' },
+              { value: '50+', label: 'Projects Delivered', icon: 'Award' },
+              { value: '100%', label: 'Client Satisfaction', icon: 'TrendingUp' },
+            ],
+          },
+        },
+        {
+          id: 'abt_founder',
+          type: 'founder',
+          enabled: true,
+          data: {
+            sectionTitle: 'Meet Our Founder',
+            sectionSubtitle: 'The vision and leadership behind Jynoro',
+            name: 'Jahanzaib Arshad',
+            role: 'Founder & Lead Developer',
+            initials: 'JA',
+            bio: [
+              'Jahanzaib founded Jynoro with a clear mission: deliver modern, high-performance websites and applications that drive real business results.',
+              'With hands-on experience across full-stack development, UI/UX, and digital strategy, he leads every project with a focus on quality, speed, and measurable growth.',
+            ],
+            tags: ['Full-Stack Development', 'Product Strategy', 'SEO', 'UI/UX'],
+          },
+        },
+        {
+          id: 'abt_vision',
+          type: 'two-column',
+          enabled: true,
+          data: {
+            columns: [
+              {
+                icon: 'Target',
+                title: 'Our Vision',
+                content:
+                  'To empower businesses worldwide with cutting-edge digital solutions that drive growth, innovation, and lasting competitive advantage.',
+              },
+              {
+                icon: 'Compass',
+                title: 'Our Mission',
+                content:
+                  'We deliver exceptional web experiences through modern technology, transparent communication, and a relentless focus on our clients success.',
+              },
+            ],
+          },
+        },
+        {
+          id: 'abt_cta',
+          type: 'cta',
+          enabled: true,
+          data: {
+            title: 'Want to work with us?',
+            description: 'Let us help you build something great for your business.',
+            buttonLabel: 'Start a Project',
+            buttonHref: '/contact',
+          },
+        },
+      ],
+    },
+    {
+      slug: 'contact',
+      path: '/contact',
+      title: 'Contact',
+      focusKeyword: 'web development consultation',
+      seoTitle: 'Contact Jynoro | Free Web Development Consultation',
+      seoDescription:
+        'Get a free consultation for your web project. Email hello@jynoro.com or send us a message — we respond within 24 hours.',
+      sections: [
+        {
+          id: 'cnt_header',
+          type: 'page-header',
+          enabled: true,
+          data: {
+            title: 'Get Your Free',
+            titleHighlight: 'Consultation',
+            subtitle: 'Tell us about your project and we will help you find the perfect solution',
+          },
+        },
+        {
+          id: 'cnt_info',
+          type: 'contact-info',
+          enabled: true,
+          data: {
+            items: [
+              { icon: '📧', title: 'Email', value: 'hello@jynoro.com' },
+              { icon: '💬', title: 'WhatsApp', value: 'Quick consultation' },
+              { icon: '🚀', title: 'Response Time', value: 'Within 24 hours' },
+            ],
+          },
+        },
+        {
+          id: 'cnt_form',
+          type: 'contact-form',
+          enabled: true,
+          data: { title: 'Send a Message', subtitle: 'Fill out the form and we will get back to you shortly.' },
+        },
+        {
+          id: 'cnt_faq',
+          type: 'faq',
+          enabled: true,
+          data: {
+            title: 'Frequently Asked Questions',
+            items: [
+              {
+                question: 'How long does it take to get a response?',
+                answer: 'We typically respond within 24 hours during business days.',
+              },
+              {
+                question: 'Do you offer support after project completion?',
+                answer: 'Yes! We offer ongoing maintenance and support packages.',
+              },
+              {
+                question: 'What is your development process?',
+                answer: 'We follow agile methodology with regular check-ins and transparent communication.',
+              },
+            ],
+          },
+        },
+      ],
+    },
+  ]
+}

@@ -6,19 +6,20 @@ import { motion } from 'framer-motion'
 import { ArrowLeft, ArrowRight, Calendar, User } from 'lucide-react'
 import Badge from '@/components/ui/Badge'
 import SectionCta from '@/components/ui/SectionCta'
-import type { PortfolioProject } from '@/lib/portfolio-data'
-import { getProjectHref, PORTFOLIO_PROJECTS } from '@/lib/portfolio-data'
+import type { PortfolioProject } from '@/lib/content-types'
+import { getProjectHref } from '@/lib/content-types'
 import { SECTION_CLASS, SECTION_BODY, SECTION_HEADING, SECTION_CTA } from '@/lib/utils'
 
 interface ProjectDetailContentProps {
   project: PortfolioProject
+  allProjects: PortfolioProject[]
 }
 
-export default function ProjectDetailContent({ project }: ProjectDetailContentProps) {
-  const currentIndex = PORTFOLIO_PROJECTS.findIndex((p) => p.slug === project.slug)
-  const prevProject = currentIndex > 0 ? PORTFOLIO_PROJECTS[currentIndex - 1] : null
+export default function ProjectDetailContent({ project, allProjects }: ProjectDetailContentProps) {
+  const currentIndex = allProjects.findIndex((p) => p.slug === project.slug)
+  const prevProject = currentIndex > 0 ? allProjects[currentIndex - 1] : null
   const nextProject =
-    currentIndex < PORTFOLIO_PROJECTS.length - 1 ? PORTFOLIO_PROJECTS[currentIndex + 1] : null
+    currentIndex < allProjects.length - 1 ? allProjects[currentIndex + 1] : null
 
   return (
     <motion.article
@@ -82,28 +83,27 @@ export default function ProjectDetailContent({ project }: ProjectDetailContentPr
           </ul>
         </div>
 
-        <div className={SECTION_BODY}>
-          <h2 className={`text-2xl font-bold text-white ${SECTION_HEADING}`}>Project Gallery</h2>
-          <p className="mb-6 text-gray-400">
-            Sample screenshots — replace these images with your final project assets when ready.
-          </p>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {project.gallery.map((src, index) => (
-              <motion.div
-                key={`${project.slug}-${index}`}
-                className="relative aspect-[16/10] overflow-hidden rounded-xl border border-slate-700/50 bg-slate-800/30"
-              >
-                <Image
-                  src={src}
-                  alt={`${project.title} screenshot ${index + 1}`}
-                  fill
-                  className="object-cover transition-transform duration-300 hover:scale-[1.02]"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </motion.div>
-            ))}
+        {project.gallery.length > 0 && (
+          <div className={SECTION_BODY}>
+            <h2 className={`text-2xl font-bold text-white ${SECTION_HEADING}`}>Project Gallery</h2>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {project.gallery.map((src, index) => (
+                <motion.div
+                  key={`${project.slug}-${index}`}
+                  className="relative aspect-[16/10] overflow-hidden rounded-xl border border-slate-700/50 bg-slate-800/30"
+                >
+                  <Image
+                    src={src}
+                    alt={`${project.title} screenshot ${index + 1}`}
+                    fill
+                    className="object-cover transition-transform duration-300 hover:scale-[1.02]"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         <div className={SECTION_BODY}>
           <h2 className={`text-xl font-bold text-white ${SECTION_HEADING}`}>Technologies</h2>

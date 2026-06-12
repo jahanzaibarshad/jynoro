@@ -29,7 +29,7 @@ export interface ServiceCard {
   icon: string
 }
 
-export type { PortfolioProject as Portfolio } from '@/lib/portfolio-data'
+export type { PortfolioProject as Portfolio } from '@/lib/content-types'
 
 export interface Testimonial {
   name: string

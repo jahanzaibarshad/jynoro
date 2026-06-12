@@ -1,12 +1,21 @@
 import type { MetadataRoute } from 'next'
-import { PORTFOLIO_PROJECTS } from '@/lib/portfolio-data'
+import { readPortfolio, readBlogPosts } from '@/lib/data-store'
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const projectPages = PORTFOLIO_PROJECTS.map((project) => ({
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const [projects, posts] = await Promise.all([readPortfolio(), readBlogPosts()])
+
+  const projectPages = projects.map((project) => ({
     url: `https://jynoro.com/portfolio/${project.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
+  }))
+
+  const blogPages = posts.map((post) => ({
+    url: `https://jynoro.com/blog/${post.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
   }))
 
   return [
@@ -47,5 +56,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     ...projectPages,
+    ...blogPages,
   ]
 }

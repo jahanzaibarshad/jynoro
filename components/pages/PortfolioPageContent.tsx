@@ -6,7 +6,8 @@ import { motion } from 'framer-motion'
 import { Briefcase, ExternalLink, Star, BadgeCheck } from 'lucide-react'
 import Card from '@/components/ui/Card'
 import SectionCta from '@/components/ui/SectionCta'
-import { PORTFOLIO_PROJECTS, getProjectHref } from '@/lib/portfolio-data'
+import type { PortfolioProject } from '@/lib/content-types'
+import { getProjectHref } from '@/lib/content-types'
 import { containerVariants, itemVariants } from '@/styles/animations'
 import {
   SECTION_CLASS,
@@ -38,7 +39,11 @@ const PORTFOLIO_STATS = [
   },
 ] as const
 
-export default function PortfolioPageContent() {
+interface PortfolioPageContentProps {
+  projects: PortfolioProject[]
+}
+
+export default function PortfolioPageContent({ projects }: PortfolioPageContentProps) {
   return (
     <motion.div
       className={SECTION_CLASS}
@@ -64,7 +69,7 @@ export default function PortfolioPageContent() {
           className={`${CARD_GRID} ${SECTION_BODY}`}
           style={{ transform: 'translateZ(0)' }}
         >
-          {PORTFOLIO_PROJECTS.map((project) => (
+          {projects.map((project) => (
             <motion.div key={project.id} variants={itemVariants} style={{ willChange: 'opacity' }}>
               <Link href={getProjectHref(project.slug)} className="block h-full">
                 <Card className="group h-full cursor-pointer transition-transform duration-300 hover:-translate-y-0.5">

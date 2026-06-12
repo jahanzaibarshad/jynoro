@@ -5,6 +5,7 @@ import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import WhatsAppButton from '@/components/layout/WhatsAppButton'
 import SmoothScroll from '@/components/layout/SmoothScroll'
+import SiteAnalytics from '@/components/analytics/SiteAnalytics'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -21,6 +22,13 @@ export const metadata: Metadata = {
   description: 'Modern web development services for business growth. We build better websites and apps.',
   keywords: 'web development, web design, custom apps, SEO, digital solutions',
   authors: [{ name: 'Jynoro' }],
+  icons: {
+    icon: [{ url: '/icon.svg', type: 'image/svg+xml' }],
+    apple: [{ url: '/icon.svg', type: 'image/svg+xml' }],
+  },
+  verification: {
+    google: '2ZMy3SPkmeHkk66S5NxvkvA3vMjVMvJJyEP82Kgg6UY',
+  },
 }
 
 export default function RootLayout({
@@ -31,6 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body className="bg-slate-900 text-white">
+        <SiteAnalytics />
         <SmoothScroll>
           <Navbar />
           <main className="min-h-screen pt-[5.25rem]">{children}</main>

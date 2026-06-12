@@ -13,7 +13,7 @@ export default function Home() {
       <HeroSection />
       <ServicesSection />
       <PortfolioSection />
-      <ParallaxSection>
+      <ParallaxSection tall={false}>
         <WhyJynoroSection />
       </ParallaxSection>
       <TestimonialsSection />

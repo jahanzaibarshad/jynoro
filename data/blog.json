@@ -1,0 +1,34 @@
+{
+  "posts": [
+    {
+      "slug": "modern-web-development-2024",
+      "title": "The Complete Guide to Modern Web Development in 2024",
+      "excerpt": "Explore the latest technologies and best practices for building fast, secure, and scalable web applications in 2024.",
+      "content": "Modern web development continues to evolve rapidly. In this guide we cover frameworks, performance, security, and deployment best practices for production apps.\n\nFrom React Server Components to edge deployment, teams are shipping faster while keeping quality high. Start with a clear architecture, measure performance early, and invest in developer experience.",
+      "category": "Web Development",
+      "date": "Jan 15, 2024",
+      "readTime": 8,
+      "featured": true
+    },
+    {
+      "slug": "high-converting-landing-pages",
+      "title": "10 Tips for Building High-Converting Landing Pages",
+      "excerpt": "Learn the proven strategies to create landing pages that convert visitors into customers and boost your business growth.",
+      "content": "Landing pages are the front door of your campaigns. Focus on clarity, speed, social proof, and a single strong call to action.\n\nTest headlines, reduce friction in forms, and make sure your page loads in under two seconds on mobile.",
+      "category": "Marketing",
+      "date": "Jan 10, 2024",
+      "readTime": 6,
+      "featured": true
+    },
+    {
+      "slug": "responsive-design-essential",
+      "title": "Why Responsive Design is Essential for Your Business",
+      "excerpt": "Discover why responsive design isn't just a nice-to-have feature but a critical requirement for modern web applications.",
+      "content": "Responsive design ensures your product works on every screen size. It improves SEO, usability, and conversion rates.\n\nMobile traffic dominates most industries — if your site breaks on small screens, you lose trust and revenue.",
+      "category": "Web Design",
+      "date": "Jan 5, 2024",
+      "readTime": 5,
+      "featured": false
+    }
+  ]
+}

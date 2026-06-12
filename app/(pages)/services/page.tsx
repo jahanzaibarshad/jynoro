@@ -1,7 +1,10 @@
 import type { Metadata } from 'next'
 import ServicesPageContent from '@/components/pages/ServicesPageContent'
+import CmsPageRenderer from '@/components/pages/CmsPageRenderer'
+import { getPageBySlug } from '@/lib/data-store'
+import { buildCmsMetadata } from '@/lib/cms-metadata'
 
-export const metadata: Metadata = {
+const fallbackMetadata: Metadata = {
   title: 'Web Development Services | Jynoro',
   description:
     'Professional web development, custom web apps, SEO optimization, and maintenance services. Let us help your business grow.',
@@ -12,17 +15,17 @@ export const metadata: Metadata = {
       'Professional web development, custom web apps, SEO optimization, and maintenance services.',
     type: 'website',
     url: 'https://jynoro.com/services',
-    images: [
-      {
-        url: 'https://picsum.photos/1200/630?random=100',
-        width: 1200,
-        height: 630,
-        alt: 'Jynoro Web Development Services',
-      },
-    ],
   },
 }
 
-export default function ServicesPage() {
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await getPageBySlug('services')
+  if (page) return buildCmsMetadata(page, fallbackMetadata)
+  return fallbackMetadata
+}
+
+export default async function ServicesPage() {
+  const page = await getPageBySlug('services')
+  if (page) return <CmsPageRenderer page={page} />
   return <ServicesPageContent />
 }

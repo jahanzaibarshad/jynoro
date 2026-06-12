@@ -72,34 +72,60 @@ export const WHY_JYNORO = [
   },
 ]
 
-// Portfolio Projects — full data in lib/portfolio-data.ts
-export { PORTFOLIO_PROJECTS, getProjectBySlug, getProjectHref } from '@/lib/portfolio-data'
+// Portfolio — dynamic data in data/portfolio.json via lib/data-store.ts
+export { getProjectHref } from '@/lib/content-types'
 
-// Testimonials
+// Fiverr client reviews (5-star)
 export const TESTIMONIALS = [
   {
-    name: 'Sarah Johnson',
-    role: 'CEO, TechStart Inc',
-    content: 'Jynoro transformed our digital presence. Within 3 months, we saw a 250% increase in leads.',
-    avatar: 'https://picsum.photos/64/64?random=10',
+    name: 'Andrew',
+    role: 'United States · Full Stack Web App',
+    content: 'Great to work with. Clean build, fast turnaround, and very responsive. Would hire again.',
   },
   {
-    name: 'Michael Chen',
-    role: 'Marketing Director, Growth Co',
-    content: 'Professional team, exceptional results. They understand both business and technology.',
-    avatar: 'https://picsum.photos/64/64?random=11',
+    name: 'Maverick',
+    role: 'United States · Full Stack Web App',
+    content:
+      'Converted a Canva template to JSX saving me time to focus on core architecture. Thank you!',
   },
   {
-    name: 'Emma Davis',
-    role: 'Founder, Creative Studios',
-    content: 'Best investment we made for our online business. Highly recommended!',
-    avatar: 'https://picsum.photos/64/64?random=12',
+    name: 'Vale',
+    role: 'United States · Full Stack Web App',
+    content:
+      'The quality of the work delivered was outstanding. The attention to detail and expertise truly exceeded my expectations. I highly recommend Jahanzaib to anyone seeking top-notch web design services.',
   },
   {
-    name: 'David Wilson',
-    role: 'Owner, E-Commerce Store',
-    content: 'The team at Jynoro exceeded all expectations. Outstanding technical expertise and support.',
-    avatar: 'https://picsum.photos/64/64?random=13',
+    name: 'Lucian',
+    role: 'United States · Full Stack Web App',
+    content:
+      'Very excellent website. I am very happy to work with this seller. Good communication with very fast delivery. I recommend you to work with this seller. Thanks!',
+  },
+  {
+    name: 'Design Zone',
+    role: 'United States · Cross-Platform Development',
+    content:
+      'Overall, I am very happy. Communication was great! I will use the services again. Thank you.',
+  },
+  {
+    name: 'Kay',
+    role: 'Australia · Cross-Platform Development',
+    content:
+      'This seller is great to work with and has talent. I can wholeheartedly recommend them for work, and I will certainly use their services again. They are always willing to help and respond promptly.',
+  },
+  {
+    name: 'Judith',
+    role: 'United Kingdom · WooCommerce',
+    content: 'Delivery on time and delivered a great looking website.',
+  },
+  {
+    name: 'Vinay',
+    role: 'India · Full Stack Web App',
+    content: 'Nice work!',
+  },
+  {
+    name: 'Dharam',
+    role: 'India · Cross-Platform Development',
+    content: 'Thanks for your fast delivery.',
   },
 ]
 

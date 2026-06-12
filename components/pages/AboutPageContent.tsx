@@ -171,8 +171,8 @@ export default function AboutPageContent() {
               transition={{ duration: 0.5, ease: 'easeOut' }}
             >
               <Card className="h-full">
-                <div className="mb-4 inline-flex rounded-xl border border-indigo-400/30 bg-indigo-500/15 p-3">
-                  <Target className="h-6 w-6 text-indigo-400" />
+                <div className="mb-4 w-fit self-start rounded-lg border border-indigo-400/30 bg-indigo-500/10 p-2.5">
+                  <Target className="h-5 w-5 text-indigo-400" />
                 </div>
                 <h2 className={`text-2xl font-bold text-white md:text-3xl ${SECTION_HEADING}`}>
                   Our Vision
@@ -191,8 +191,8 @@ export default function AboutPageContent() {
               transition={{ delay: 0.08, duration: 0.5, ease: 'easeOut' }}
             >
               <Card className="h-full">
-                <div className="mb-4 inline-flex rounded-xl border border-cyan-400/30 bg-cyan-500/15 p-3">
-                  <Compass className="h-6 w-6 text-cyan-400" />
+                <div className="mb-4 w-fit self-start rounded-lg border border-cyan-400/30 bg-cyan-500/10 p-2.5">
+                  <Compass className="h-5 w-5 text-cyan-400" />
                 </div>
                 <h2 className={`text-2xl font-bold text-white md:text-3xl ${SECTION_HEADING}`}>
                   Our Mission
