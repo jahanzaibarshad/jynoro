@@ -25,7 +25,20 @@ export default function AdminLoginPage() {
     setLoading(false)
 
     if (!res.ok) {
-      setError('Invalid username or password')
+      let message = 'Invalid username or password'
+      try {
+        const data = (await res.json()) as { error?: string }
+        if (data.error === 'Too many attempts. Try again later.') {
+          message = data.error
+        } else if (res.status === 503) {
+          message = data.error || 'Login is temporarily unavailable.'
+        } else if (res.status !== 401) {
+          message = 'Something went wrong. Please try again.'
+        }
+      } catch {
+        // keep default message
+      }
+      setError(message)
       return
     }
 

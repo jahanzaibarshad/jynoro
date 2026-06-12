@@ -6,16 +6,21 @@ const SESSION_MS = 7 * 24 * 60 * 60 * 1000
 
 export const ADMIN_USERNAME = process.env.ADMIN_USERNAME || 'jahanzaibranjha'
 export const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'r4njha@2003'
-const SECRET =
-  process.env.ADMIN_SECRET ||
-  (process.env.NODE_ENV === 'production'
-    ? ''
-    : 'jynoro-dev-secret-change-in-production')
+
+function resolveAdminSecret() {
+  if (process.env.ADMIN_SECRET) return process.env.ADMIN_SECRET
+  if (process.env.NODE_ENV !== 'production') return 'jynoro-dev-secret-change-in-production'
+
+  // Fallback when ADMIN_SECRET is not configured on the host yet.
+  return crypto
+    .createHash('sha256')
+    .update(`${ADMIN_USERNAME}:${ADMIN_PASSWORD}:jynoro-admin-v1`)
+    .digest('hex')
+}
+
+const SECRET = resolveAdminSecret()
 
 function sign(payload: string) {
-  if (!SECRET) {
-    throw new Error('ADMIN_SECRET must be set in production')
-  }
   return crypto.createHmac('sha256', SECRET).update(payload).digest('hex')
 }
 

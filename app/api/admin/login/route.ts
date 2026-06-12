@@ -32,6 +32,15 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Invalid credentials' }, { status: 401 })
   }
 
-  await setAdminSession(username)
+  try {
+    await setAdminSession(username)
+  } catch (error) {
+    console.error('Admin session error:', error)
+    return NextResponse.json(
+      { error: 'Login is temporarily unavailable. Contact the site administrator.' },
+      { status: 503 },
+    )
+  }
+
   return NextResponse.json({ success: true })
 }
