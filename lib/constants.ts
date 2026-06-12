@@ -1,4 +1,4 @@
-export const PARALLAX_BG_IMAGE = '/images/parallax-bg.jpg'
+export const PARALLAX_BG_IMAGE = '/images/why-jynoro-bg.jpg'
 
 // Brand Colors
 export const COLORS = {

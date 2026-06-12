@@ -123,12 +123,17 @@ export async function getPageBySlug(slug: string) {
   return pages.find((p) => p.slug === slug)
 }
 
+function resolveGoogleAnalyticsId(fileValue?: string) {
+  return fileValue?.trim() || process.env.NEXT_PUBLIC_GA_ID?.trim() || ''
+}
+
 export async function readSettings(): Promise<SiteSettings> {
   try {
     const raw = await fs.readFile(SETTINGS_FILE, 'utf-8')
-    return { ...DEFAULT_SETTINGS, ...(JSON.parse(raw) as SiteSettings) }
+    const file = JSON.parse(raw) as SiteSettings
+    return { googleAnalyticsId: resolveGoogleAnalyticsId(file.googleAnalyticsId) }
   } catch {
-    return { ...DEFAULT_SETTINGS }
+    return { googleAnalyticsId: resolveGoogleAnalyticsId() }
   }
 }
 

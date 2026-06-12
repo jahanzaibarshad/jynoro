@@ -5,16 +5,18 @@ import { Save, ExternalLink, BarChart3 } from 'lucide-react'
 
 export default function AdminAnalyticsPanel() {
   const [gaId, setGaId] = useState('')
+  const [activeId, setActiveId] = useState('')
   const [saving, setSaving] = useState(false)
   const [message, setMessage] = useState('')
+  const [messageType, setMessageType] = useState<'success' | 'error' | 'info'>('info')
 
   useEffect(() => {
     fetch('/api/admin/settings')
       .then((res) => res.json())
       .then((data) => {
-        if (data.settings?.googleAnalyticsId) {
-          setGaId(data.settings.googleAnalyticsId)
-        }
+        const id = data.settings?.googleAnalyticsId || ''
+        setGaId(id)
+        setActiveId(id)
       })
       .catch(() => {})
   }, [])
@@ -22,19 +24,38 @@ export default function AdminAnalyticsPanel() {
   async function save() {
     setSaving(true)
     setMessage('')
+    const trimmed = gaId.trim()
+
     const res = await fetch('/api/admin/settings', {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ googleAnalyticsId: gaId.trim() }),
+      body: JSON.stringify({ googleAnalyticsId: trimmed }),
     })
     setSaving(false)
+
+    const data = await res.json().catch(() => ({}))
+
     if (res.ok) {
+      setActiveId(trimmed)
+      setMessageType('success')
       setMessage('Analytics settings saved. Tracking is active on your public site.')
-    } else {
-      const err = await res.json().catch(() => ({}))
-      setMessage(err.error || 'Failed to save')
+      return
+    }
+
+    setMessageType('error')
+    setMessage(data.error || 'Failed to save')
+
+    if (data.requiresEnvVar && trimmed) {
+      setActiveId(trimmed)
     }
   }
+
+  const messageColor =
+    messageType === 'success'
+      ? 'text-emerald-400'
+      : messageType === 'error'
+        ? 'text-red-400'
+        : 'text-cyan-400'
 
   return (
     <div className="grid gap-6 lg:grid-cols-2">
@@ -56,7 +77,7 @@ export default function AdminAnalyticsPanel() {
             className="admin-input w-full rounded-lg border border-slate-600 bg-slate-800 px-3 py-2 text-white outline-none focus:border-cyan-500"
           />
           <p className="admin-muted mt-1.5 text-xs">
-            Find this in Google Analytics → Admin → Data Streams → your web stream.
+            From Google Analytics → Admin → Data Streams → Web stream. Not the Search Console code.
           </p>
         </div>
 
@@ -65,7 +86,13 @@ export default function AdminAnalyticsPanel() {
           {saving ? 'Saving…' : 'Save & Enable Tracking'}
         </button>
 
-        {message && <p className="text-sm text-cyan-400">{message}</p>}
+        {message && <p className={`text-sm ${messageColor}`}>{message}</p>}
+
+        <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-3 text-xs text-amber-200">
+          On live hosting (Vercel), also add{' '}
+          <span className="font-mono">NEXT_PUBLIC_GA_ID</span> in Environment Variables with your
+          Measurement ID, then redeploy.
+        </div>
       </div>
 
       <div className="admin-card space-y-4">
@@ -91,14 +118,17 @@ export default function AdminAnalyticsPanel() {
             <li>Add a Web data stream for jynoro.com</li>
             <li>Copy the Measurement ID (starts with G-)</li>
             <li>Paste it above and save</li>
+            <li>On Vercel, set NEXT_PUBLIC_GA_ID to the same value</li>
             <li>Visit your site — data appears within 24–48 hours</li>
           </ol>
         </div>
 
-        {gaId && (
+        {activeId ? (
           <p className="text-xs text-emerald-400">
-            Active ID: <span className="font-mono">{gaId}</span>
+            Active ID: <span className="font-mono">{activeId}</span>
           </p>
+        ) : (
+          <p className="text-xs text-gray-500">No Measurement ID configured yet.</p>
         )}
       </div>
     </div>
