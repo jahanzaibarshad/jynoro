@@ -11,16 +11,6 @@ const DATA_DIR = path.join(process.cwd(), 'data')
 const PORTFOLIO_FILE = path.join(DATA_DIR, 'portfolio.json')
 const BLOG_FILE = path.join(DATA_DIR, 'blog.json')
 const PAGES_FILE = path.join(DATA_DIR, 'pages.json')
-const SETTINGS_FILE = path.join(DATA_DIR, 'settings.json')
-
-export interface SiteSettings {
-  googleAnalyticsId: string
-}
-
-const DEFAULT_SETTINGS: SiteSettings = {
-  googleAnalyticsId: process.env.NEXT_PUBLIC_GA_ID || '',
-}
-
 async function ensureDataDir() {
   await fs.mkdir(DATA_DIR, { recursive: true })
 }
@@ -123,21 +113,3 @@ export async function getPageBySlug(slug: string) {
   return pages.find((p) => p.slug === slug)
 }
 
-function resolveGoogleAnalyticsId(fileValue?: string) {
-  return fileValue?.trim() || process.env.NEXT_PUBLIC_GA_ID?.trim() || ''
-}
-
-export async function readSettings(): Promise<SiteSettings> {
-  try {
-    const raw = await fs.readFile(SETTINGS_FILE, 'utf-8')
-    const file = JSON.parse(raw) as SiteSettings
-    return { googleAnalyticsId: resolveGoogleAnalyticsId(file.googleAnalyticsId) }
-  } catch {
-    return { googleAnalyticsId: resolveGoogleAnalyticsId() }
-  }
-}
-
-export async function writeSettings(settings: SiteSettings) {
-  await ensureDataDir()
-  await fs.writeFile(SETTINGS_FILE, JSON.stringify(settings, null, 2), 'utf-8')
-}

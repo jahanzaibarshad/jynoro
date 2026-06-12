@@ -5,7 +5,6 @@ import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import WhatsAppButton from '@/components/layout/WhatsAppButton'
 import SmoothScroll from '@/components/layout/SmoothScroll'
-import SiteAnalytics from '@/components/analytics/SiteAnalytics'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -45,7 +44,6 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-slate-900 text-white">
-        <SiteAnalytics />
         <SmoothScroll>
           <Navbar />
           <main className="min-h-screen pt-[5.25rem]">{children}</main>

@@ -31,9 +31,6 @@ export default async function AdminDashboardLayout({
               <Link href="/admin/blog" className="text-gray-300 hover:text-white">
                 Blog
               </Link>
-              <Link href="/admin/analytics" className="text-gray-300 hover:text-white">
-                Analytics
-              </Link>
             </nav>
           </div>
           <div className="flex items-center gap-4">

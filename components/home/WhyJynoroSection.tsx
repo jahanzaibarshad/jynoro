@@ -43,8 +43,12 @@ export default function WhyJynoroSection() {
           </span>
           ?
         </h2>
-        <p className={`mx-auto max-w-2xl text-lg text-slate-200/90 md:text-xl ${SECTION_BODY}`}>
-          We&apos;re committed to delivering exceptional results and driving real business growth
+        <p
+          className={`mx-auto mt-5 max-w-3xl text-pretty text-base font-normal leading-relaxed tracking-normal text-slate-300 md:mt-6 md:text-lg md:leading-8 lg:text-[1.125rem] ${SECTION_BODY}`}
+        >
+          We&apos;re committed to delivering exceptional results
+          <br className="hidden sm:inline" />
+          {' '}and driving real business growth
         </p>
       </motion.div>
 
