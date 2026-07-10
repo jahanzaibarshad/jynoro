@@ -1,12 +1,14 @@
 @import 'tailwindcss';
 
 :root {
-  --background: #0f172a;
-  --card: #1e2937;
+  --background: #070b1a;
+  --card: #121a30;
   --foreground: #ffffff;
-  --text-secondary: #e2e8f0;
-  --primary: #4f46e5;
-  --accent: #06b6d4;
+  --text-secondary: #aab3c5;
+  --primary: #4f8cff;
+  --accent: #00e5ff;
+  --violet: #6c3dff;
+  --teal: #00e6b8;
 }
 
 @theme inline {
@@ -22,14 +24,23 @@
 
 html {
   scroll-behavior: auto;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
-  background: linear-gradient(135deg, #0f172a 0%, #1a1f3a 100%);
+  background: #070b1a;
   color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
   @apply font-sans;
   overflow-x: hidden;
+  min-width: 320px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 /* Scroll performance */
@@ -71,27 +82,27 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: #070b1a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #4f46e5;
+  background: #4f8cff;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #06b6d4;
+  background: #00e5ff;
 }
 
 /* Selection */
 ::selection {
-  background: #4f46e5;
+  background: #4f8cff;
   color: #ffffff;
 }
 
 /* Text Utilities */
 .text-gradient {
-  @apply bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-cyan-300 via-blue-400 to-violet-400 bg-clip-text text-transparent;
 }
 
 /* Button Animations */
@@ -111,7 +122,7 @@ body {
 
 /* ─── Hero aurora background (CSS-only, GPU transforms) ─── */
 .hero-aurora {
-  background: radial-gradient(ellipse 130% 90% at 50% -10%, #3730a3 0%, #0f172a 40%, #020617 100%);
+  background: radial-gradient(ellipse 130% 90% at 50% -10%, #101832 0%, #070b1a 46%, #03050d 100%);
 }
 
 .hero-aurora__base {
@@ -119,7 +130,7 @@ body {
   inset: 0;
   background: radial-gradient(
     ellipse 80% 60% at 50% 40%,
-    rgba(79, 70, 229, 0.18) 0%,
+    rgba(0, 229, 255, 0.1) 0%,
     transparent 55%
   );
 }
@@ -140,9 +151,9 @@ body {
   top: -22%;
   background: radial-gradient(
     circle at 40% 40%,
-    rgba(129, 140, 248, 0.95) 0%,
-    rgba(79, 70, 229, 0.55) 35%,
-    rgba(67, 56, 202, 0.2) 55%,
+    rgba(0, 229, 255, 0.72) 0%,
+    rgba(79, 140, 255, 0.38) 35%,
+    rgba(108, 61, 255, 0.16) 55%,
     transparent 72%
   );
   animation: aurora-blob-1 8s ease-in-out infinite;
@@ -155,9 +166,9 @@ body {
   bottom: -18%;
   background: radial-gradient(
     circle at 55% 55%,
-    rgba(34, 211, 238, 0.9) 0%,
-    rgba(6, 182, 212, 0.5) 38%,
-    rgba(8, 145, 178, 0.15) 58%,
+    rgba(0, 230, 184, 0.68) 0%,
+    rgba(0, 229, 255, 0.32) 38%,
+    rgba(79, 140, 255, 0.12) 58%,
     transparent 72%
   );
   animation: aurora-blob-2 8s ease-in-out infinite;
@@ -171,8 +182,8 @@ body {
   bottom: 8%;
   background: radial-gradient(
     circle at 50% 50%,
-    rgba(167, 139, 250, 0.5) 0%,
-    rgba(139, 92, 246, 0.22) 45%,
+    rgba(108, 61, 255, 0.48) 0%,
+    rgba(79, 140, 255, 0.18) 45%,
     transparent 68%
   );
   animation: aurora-blob-3 9s ease-in-out infinite;
@@ -186,8 +197,8 @@ body {
   top: 8%;
   background: radial-gradient(
     circle at 50% 50%,
-    rgba(99, 102, 241, 0.8) 0%,
-    rgba(79, 70, 229, 0.25) 50%,
+    rgba(0, 229, 255, 0.5) 0%,
+    rgba(108, 61, 255, 0.2) 50%,
     transparent 70%
   );
   animation: aurora-blob-4 7.5s ease-in-out infinite;
@@ -545,5 +556,129 @@ body {
   100% {
     transform: translate3d(calc(var(--from-x) * 0.5), calc(var(--from-y) * 0.5), 0) scale(0.6);
     opacity: 0;
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE: Ultra-wide (2K/4K) & Small Phone fixes
+   ═══════════════════════════════════════════════════ */
+
+/* 4K / Ultra-wide screens: increase max-width & scale up content */
+@media (min-width: 2560px) {
+  .max-w-7xl {
+    max-width: 1600px !important;
+  }
+  .max-w-5xl {
+    max-width: 1200px !important;
+  }
+  body {
+    font-size: 18px;
+  }
+}
+
+/* Small phones (iPhone SE, Galaxy S series compact) */
+@media (max-width: 374px) {
+  .hero-stage {
+    padding-top: 6.5rem !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+  .hero-stage h1 {
+    font-size: 2.2rem !important;
+    line-height: 1.08 !important;
+  }
+  .hero-stage p {
+    font-size: 0.95rem !important;
+  }
+}
+
+/* iPhone notch safe area */
+@supports (padding: env(safe-area-inset-bottom)) {
+  body {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+  footer {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Prevent horizontal overflow globally */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+main,
+section,
+header,
+footer,
+nav {
+  max-width: 100vw;
+}
+
+/* Responsive images */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+  max-width: 100%;
+}
+
+a,
+button,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+span,
+a,
+button {
+  overflow-wrap: anywhere;
+}
+
+/* Responsive containers */
+@media (max-width: 639px) {
+  body {
+    font-size: 15px;
+  }
+
+  h1,
+  h2 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  .prose {
+    font-size: 0.925rem;
+  }
+  .prose h2 {
+    font-size: 1.35rem;
+  }
+
+  .rounded-3xl {
+    border-radius: 1.25rem;
+  }
+
+  .shadow-\[0_20px_50px_rgba\(0\,0\,0\,0\.4\)\],
+  .shadow-\[0_20px_50px_rgba\(0\,0\,0\,0\.5\)\] {
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.38);
   }
 }

@@ -21,9 +21,9 @@ export default function SectionCta({
       <h2 className={`text-3xl font-bold text-white md:text-4xl ${SECTION_HEADING} mb-0`}>
         {title}
       </h2>
-      <p className={`max-w-xl text-lg text-gray-400 ${SECTION_BODY} mb-0`}>{description}</p>
-      <Link href={href} className="inline-flex shrink-0">
-        <Button variant="primary" size="lg">
+      <p className={`max-w-xl text-base leading-relaxed text-gray-400 md:text-lg ${SECTION_BODY} mb-0`}>{description}</p>
+      <Link href={href} className="inline-flex w-full max-w-sm shrink-0 sm:w-auto">
+        <Button variant="primary" size="lg" className="w-full justify-center sm:w-auto">
           {buttonLabel}
         </Button>
       </Link>

@@ -138,7 +138,7 @@ export function createSection(type: SectionType): PageSection {
     },
     'contact-info': {
       items: [
-        { icon: '📧', title: 'Email', value: 'hello@jynoro.com' },
+        { icon: '📧', title: 'Email', value: 'info@jynoro.com' },
         { icon: '💬', title: 'WhatsApp', value: 'Quick consultation' },
         { icon: '🚀', title: 'Response Time', value: 'Within 24 hours' },
       ],
@@ -154,7 +154,7 @@ export function createSection(type: SectionType): PageSection {
       tags: ['Web Development', 'Strategy', 'Leadership'],
     },
     'image-text': {
-      image: '/images/parallax-bg.jpg',
+      image: '/images/parallax-bg.webp',
       alt: 'Section image',
       title: 'Section Title',
       content: 'Supporting text for this image section. Great for case studies and SEO-rich content.',

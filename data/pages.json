@@ -4,9 +4,9 @@
       "slug": "services",
       "path": "/services",
       "title": "Services",
-      "focusKeyword": "web development services",
-      "seoTitle": "Web Development Services | Jynoro",
-      "seoDescription": "Professional web development, custom apps, SEO optimization, and ongoing support. Tailored digital solutions to grow your business online.",
+      "focusKeyword": "Jynoro services",
+      "seoTitle": "Jynoro Services | Web Development, AI Automation, SEO & Design",
+      "seoDescription": "Explore Jynoro services for web development, custom web apps, AI automation, technical SEO, website maintenance, UI/UX, and graphic design.",
       "sections": [
         {
           "id": "svc_header",
@@ -35,7 +35,7 @@
                   "SEO Optimized",
                   "Mobile First Approach"
                 ],
-                "price": "Starting from $2,000",
+                "price": "Custom quote",
                 "ctaLabel": "Get Quote",
                 "ctaHref": "/contact"
               },
@@ -49,7 +49,7 @@
                   "API Integration",
                   "Scalable Architecture"
                 ],
-                "price": "Starting from $5,000",
+                "price": "Custom quote",
                 "ctaLabel": "Get Quote",
                 "ctaHref": "/contact"
               },
@@ -63,17 +63,9 @@
                   "Technical SEO",
                   "Content Strategy"
                 ],
-                "price": "Starting from $1,000/month",
+                "price": "Custom quote",
                 "ctaLabel": "Get Quote",
                 "ctaHref": "/contact"
-              },
-              {
-                "title": "asdf",
-                "description": "",
-                "icon": "",
-                "price": "",
-                "ctaLabel": "",
-                "ctaHref": ""
               }
             ]
           }
@@ -94,7 +86,7 @@
           "type": "image-text",
           "enabled": true,
           "data": {
-            "image": "/images/parallax-bg.jpg",
+            "image": "/images/parallax-bg.webp",
             "alt": "Section image",
             "title": "Section Title",
             "content": "Supporting text for this image section. Great for case studies and SEO-rich content.",
@@ -205,7 +197,7 @@
       "title": "Contact",
       "focusKeyword": "web development consultation",
       "seoTitle": "Contact Jynoro | Free Web Development Consultation",
-      "seoDescription": "Get a free consultation for your web project. Email hello@jynoro.com or send us a message — we respond within 24 hours.",
+      "seoDescription": "Get a free consultation for your web project. Email info@jynoro.com or send us a message — we respond within 24 hours.",
       "sections": [
         {
           "id": "cnt_header",
@@ -226,7 +218,7 @@
               {
                 "icon": "📧",
                 "title": "Email",
-                "value": "hello@jynoro.com"
+                "value": "info@jynoro.com"
               },
               {
                 "icon": "💬",

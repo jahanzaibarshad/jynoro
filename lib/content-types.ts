@@ -4,6 +4,7 @@ export interface PortfolioProject extends SeoFields {
   title: string
   category: string
   description: string
+  featuredDescription?: string
   longDescription: string
   highlights: string[]
   image: string
@@ -12,6 +13,7 @@ export interface PortfolioProject extends SeoFields {
   year: string
   client: string
   featured: boolean
+  liveUrl?: string
 }
 
 export interface SeoFields {
@@ -29,6 +31,7 @@ export interface BlogPost extends SeoFields {
   date: string
   readTime: number
   featured: boolean
+  image?: string
 }
 
 export function getProjectHref(slug: string) {

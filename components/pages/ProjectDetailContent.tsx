@@ -3,12 +3,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ArrowLeft, ArrowRight, Calendar, User } from 'lucide-react'
-import Badge from '@/components/ui/Badge'
+import { ArrowLeft, ArrowRight, Calendar, User, LayoutGrid, Check, Globe } from 'lucide-react'
 import SectionCta from '@/components/ui/SectionCta'
 import type { PortfolioProject } from '@/lib/content-types'
 import { getProjectHref } from '@/lib/content-types'
-import { SECTION_CLASS, SECTION_BODY, SECTION_HEADING, SECTION_CTA } from '@/lib/utils'
 
 interface ProjectDetailContentProps {
   project: PortfolioProject
@@ -22,96 +20,157 @@ export default function ProjectDetailContent({ project, allProjects }: ProjectDe
     currentIndex < allProjects.length - 1 ? allProjects[currentIndex + 1] : null
 
   return (
-    <motion.article
-      className={SECTION_CLASS}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
-    >
-      <motion.div className="mx-auto w-full max-w-5xl">
-        <Link
-          href="/portfolio"
-          className={`inline-flex items-center gap-2 text-cyan-400 transition-colors hover:text-cyan-300 ${SECTION_BODY}`}
-        >
-          <ArrowLeft size={18} />
-          Back to Portfolio
-        </Link>
+    <article className="relative min-h-screen bg-[#050508] py-24 md:py-32 overflow-hidden">
+      {/* Background visual engine */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(7,11,25,0.6),rgba(5,5,8,1))]" />
+      <div className="absolute top-[10%] left-[-10%] w-[35%] h-[35%] rounded-full bg-[#00E5FF]/5 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-[30%] right-[-10%] w-[40%] h-[40%] rounded-full bg-[#6C3DFF]/5 blur-[150px] pointer-events-none" />
 
-        <div className={`flex flex-wrap items-center gap-3 ${SECTION_BODY}`}>
-          <Badge variant="primary">{project.category}</Badge>
-          <span className="text-sm text-gray-400">{project.year}</span>
+      <div className="max-w-5xl mx-auto px-4 md:px-6 relative z-10">
+        
+        {/* Dynamic Back Link */}
+        <div className="mb-10">
+          <Link
+            href="/portfolio"
+            className="group inline-flex items-center gap-2 text-sm font-mono text-gray-400 hover:text-[#00E5FF] transition-colors"
+          >
+            <ArrowLeft size={16} className="transition-transform duration-300 group-hover:-translate-x-1" />
+            <span>BACK_TO_PORTFOLIO</span>
+          </Link>
         </div>
 
-        <h1 className={`text-4xl font-bold md:text-5xl ${SECTION_HEADING}`}>{project.title}</h1>
-        <p className={`max-w-3xl text-lg text-gray-400 ${SECTION_BODY}`}>{project.description}</p>
+        {/* Category & Date Node */}
+        <div className="flex items-center gap-3 mb-6">
+          <span className="px-3 py-1 text-xs font-mono rounded bg-[#00E5FF]/10 border border-[#00E5FF]/20 text-[#00E5FF]">
+            {project.category}
+          </span>
+          <span className="text-xs font-mono text-gray-500">
+            {project.year}
+          </span>
+        </div>
 
-        <motion.div className={`relative mb-10 aspect-[16/9] w-full overflow-hidden rounded-2xl border border-slate-700/50 bg-slate-800/40 ${SECTION_BODY}`}>
-          <Image
-            src={project.image}
-            alt={project.title}
-            fill
-            className="object-cover"
-            sizes="(max-width: 1200px) 100vw, 896px"
-            priority
-          />
-        </motion.div>
+        {/* Title & Short Description */}
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6">
+          {project.title}
+        </h1>
+        <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-4xl mb-12">
+          {project.description}
+        </p>
 
-        <div className="mb-10 grid gap-6 sm:grid-cols-2">
-          <div className="rounded-xl border border-slate-700/50 bg-slate-800/40 p-5">
-            <div className="mb-2 flex items-center gap-2 text-sm text-gray-400">
-              <User className="h-4 w-4 text-indigo-400" />
-              Client
+        {/* Large Browser Mockup Frame */}
+        <div className="relative mb-12 rounded-2xl bg-[#070B19]/30 border border-white/[0.06] backdrop-blur-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+          {/* Mockup Header */}
+          <div className="bg-[#050508]/90 border-b border-white/[0.06] px-4 py-3 flex items-center gap-3">
+            <div className="flex gap-1.5">
+              <div className="w-2.5 h-2.5 rounded-full bg-red-500/60" />
+              <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/60" />
+              <div className="w-2.5 h-2.5 rounded-full bg-green-500/60" />
             </div>
-            <p className="font-medium text-white">{project.client}</p>
+            {/* URL bar */}
+            <div className="flex-1 max-w-[300px] mx-auto bg-[#070B19]/60 border border-white/[0.04] rounded px-3 py-0.5 text-xs font-mono text-gray-400 truncate flex items-center justify-center gap-2">
+              <Globe size={10} />
+              jynoro.dev/portfolio/{project.slug}
+            </div>
           </div>
-          <div className="rounded-xl border border-slate-700/50 bg-slate-800/40 p-5">
-            <div className="mb-2 flex items-center gap-2 text-sm text-gray-400">
-              <Calendar className="h-4 w-4 text-cyan-400" />
-              Year
-            </div>
-            <p className="font-medium text-white">{project.year}</p>
+
+          <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#050508]">
+            <Image
+              src={project.image}
+              alt={project.title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 1200px) 100vw, 1024px"
+              priority
+            />
           </div>
         </div>
 
-        <div className={`space-y-4 text-gray-300 ${SECTION_BODY}`}>
-          <h2 className="text-2xl font-bold text-white">Project Overview</h2>
-          <p className="leading-relaxed">{project.longDescription}</p>
-          <ul className="list-disc space-y-2 pl-5">
+        {/* Specs Dashboard Cards */}
+        <div className="mb-12 grid gap-6 sm:grid-cols-3">
+          <div className="rounded-2xl border border-white/[0.06] bg-[#070B1A]/40 p-6 backdrop-blur-md relative overflow-hidden">
+            <div className="mb-2 flex items-center gap-2 text-xs font-mono text-gray-500 uppercase tracking-widest">
+              <User size={12} className="text-[#00E5FF]" />
+              Client Owner
+            </div>
+            <p className="text-lg font-semibold text-white tracking-tight">{project.client}</p>
+          </div>
+          
+          <div className="rounded-2xl border border-white/[0.06] bg-[#070B1A]/40 p-6 backdrop-blur-md relative overflow-hidden">
+            <div className="mb-2 flex items-center gap-2 text-xs font-mono text-gray-500 uppercase tracking-widest">
+              <Calendar size={12} className="text-[#6C3DFF]" />
+              Deployment Date
+            </div>
+            <p className="text-lg font-semibold text-white tracking-tight">{project.year}</p>
+          </div>
+
+          <div className="rounded-2xl border border-white/[0.06] bg-[#070B1A]/40 p-6 backdrop-blur-md relative overflow-hidden">
+            <div className="mb-2 flex items-center gap-2 text-xs font-mono text-gray-500 uppercase tracking-widest">
+              <LayoutGrid size={12} className="text-emerald-400" />
+              Category Module
+            </div>
+            <p className="text-lg font-semibold text-white tracking-tight">{project.category}</p>
+          </div>
+        </div>
+
+        {/* Long Details Content */}
+        <div className="space-y-6 text-gray-300 mb-16">
+          <h2 className="text-2xl font-semibold tracking-tight text-white uppercase font-mono text-sm border-b border-white/[0.05] pb-3">
+            // Project Overview
+          </h2>
+          <p className="leading-relaxed text-gray-400">
+            {project.longDescription}
+          </p>
+          
+          <ul className="space-y-3 pt-2">
             {project.highlights.map((item) => (
-              <li key={item}>{item}</li>
+              <li key={item} className="flex items-start gap-3 text-sm text-gray-300">
+                <span className="flex-shrink-0 mt-0.5 flex items-center justify-center w-4 h-4 rounded-full bg-[#00E5FF]/10 text-[#00E5FF]">
+                  <Check size={10} strokeWidth={3} />
+                </span>
+                <span>{item}</span>
+              </li>
             ))}
           </ul>
         </div>
 
+        {/* Gallery Section */}
         {project.gallery.length > 0 && (
-          <div className={SECTION_BODY}>
-            <h2 className={`text-2xl font-bold text-white ${SECTION_HEADING}`}>Project Gallery</h2>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div className="mb-16">
+            <h2 className="text-2xl font-semibold tracking-tight text-white uppercase font-mono text-sm border-b border-white/[0.05] pb-3 mb-8">
+              // Interface Gallery
+            </h2>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
               {project.gallery.map((src, index) => (
-                <motion.div
+                <div
                   key={`${project.slug}-${index}`}
-                  className="relative aspect-[16/10] overflow-hidden rounded-xl border border-slate-700/50 bg-slate-800/30"
+                  className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-white/[0.06] bg-[#070B1A]/30 backdrop-blur-xl group"
                 >
                   <Image
                     src={src}
                     alt={`${project.title} screenshot ${index + 1}`}
                     fill
-                    className="object-cover transition-transform duration-300 hover:scale-[1.02]"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
-                </motion.div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#050508]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <span className="text-xs font-mono text-gray-400">SCREENSHOT_0{index + 1}</span>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
         )}
 
-        <div className={SECTION_BODY}>
-          <h2 className={`text-xl font-bold text-white ${SECTION_HEADING}`}>Technologies</h2>
-          <div className="flex flex-wrap gap-2">
+        {/* Technology Tag Cloud */}
+        <div className="mb-20">
+          <h2 className="text-2xl font-semibold tracking-tight text-white uppercase font-mono text-sm border-b border-white/[0.05] pb-3 mb-6">
+            // Core Tech Stack
+          </h2>
+          <div className="flex flex-wrap gap-2.5">
             {project.technologies.map((tech) => (
               <span
                 key={tech}
-                className="rounded-full border border-slate-600/60 bg-slate-800/60 px-3 py-1.5 text-sm text-gray-300"
+                className="px-3 py-1.5 text-xs font-mono rounded bg-white/[0.03] border border-white/[0.06] text-gray-300 hover:border-[#00E5FF]/30 hover:text-white transition-colors duration-200"
               >
                 {tech}
               </span>
@@ -119,37 +178,46 @@ export default function ProjectDetailContent({ project, allProjects }: ProjectDe
           </div>
         </div>
 
-        <div
-          className={`flex flex-col gap-4 border-t border-slate-700/50 pt-10 sm:flex-row sm:justify-between ${SECTION_CTA}`}
-        >
+        {/* Project Navigator Node badges */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 border-y border-white/[0.05] py-8 mb-20">
           {prevProject ? (
             <Link
               href={getProjectHref(prevProject.slug)}
-              className="inline-flex items-center gap-2 text-gray-300 transition-colors hover:text-white"
+              className="group flex items-center gap-3.5 px-5 py-3 rounded-xl bg-[#070B1A]/40 border border-white/[0.05] hover:border-[#00E5FF]/20 text-gray-400 hover:text-white transition-all duration-300"
             >
-              <ArrowLeft size={18} />
-              {prevProject.title}
+              <ArrowLeft size={16} className="transition-transform duration-300 group-hover:-translate-x-1" />
+              <div className="text-left">
+                <span className="block text-[10px] font-mono text-gray-500 uppercase">PREVIOUS BUILD</span>
+                <span className="text-sm font-semibold tracking-tight">{prevProject.title}</span>
+              </div>
             </Link>
           ) : (
-            <span />
+            <span className="hidden sm:block" />
           )}
+
           {nextProject ? (
             <Link
               href={getProjectHref(nextProject.slug)}
-              className="inline-flex items-center gap-2 text-gray-300 transition-colors hover:text-white sm:ml-auto"
+              className="group flex items-center gap-3.5 px-5 py-3 rounded-xl bg-[#070B1A]/40 border border-white/[0.05] hover:border-[#00E5FF]/20 text-gray-400 hover:text-white transition-all duration-300 sm:ml-auto"
             >
-              {nextProject.title}
-              <ArrowRight size={18} />
+              <div className="text-right">
+                <span className="block text-[10px] font-mono text-gray-500 uppercase">NEXT BUILD</span>
+                <span className="text-sm font-semibold tracking-tight">{nextProject.title}</span>
+              </div>
+              <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
-          ) : null}
+          ) : (
+            <span className="hidden sm:block" />
+          )}
         </div>
 
+        {/* Case Study CTA */}
         <SectionCta
           title="Want a project like this?"
           description="Tell us about your goals and we'll help you plan the right solution."
           buttonLabel="Start Your Project"
         />
-      </motion.div>
-    </motion.article>
+      </div>
+    </article>
   )
 }

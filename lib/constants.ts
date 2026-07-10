@@ -1,14 +1,17 @@
-export const PARALLAX_BG_IMAGE = '/images/why-jynoro-bg.jpg'
+export const PARALLAX_BG_IMAGE = '/images/why-jynoro-bg.webp'
 
 // Brand Colors
 export const COLORS = {
-  primary: '#4F46E5', // Indigo
-  accent: '#06B6D4', // Cyan
-  background: '#0F172A',
-  card: '#1E2937',
+  primary: '#4F8CFF',
+  accent: '#00E5FF',
+  violet: '#6C3DFF',
+  teal: '#00E6B8',
+  background: '#070B1A',
+  midnight: '#101832',
+  card: '#121A30',
   text: '#FFFFFF',
-  textSecondary: '#E2E8F0',
-  border: '#334155',
+  textSecondary: '#AAB3C5',
+  border: 'rgba(255, 255, 255, 0.08)',
 } as const
 
 // Navigation Links
@@ -24,20 +27,20 @@ export const NAV_LINKS = [
 export const SERVICES = [
   {
     id: 1,
-    title: 'Web Development',
+    title: 'Full-Stack Development',
     description: 'Modern, responsive websites built with cutting-edge technologies. Perfect for startups and established businesses.',
     icon: 'Code2',
   },
   {
     id: 2,
-    title: 'Custom Web Apps',
-    description: 'Tailored solutions for complex business needs. From SaaS platforms to enterprise applications.',
+    title: 'Agentic AI & Automation',
+    description: 'Intelligent AI agents and automated workflows designed to scale operations and eliminate manual tasks.',
     icon: 'Zap',
   },
   {
     id: 3,
-    title: 'SEO Optimized Sites',
-    description: 'Rank higher on search engines with our SEO-first approach and performance optimization.',
+    title: 'Full-Spectrum SEO Strategies',
+    description: 'Comprehensive Technical, On-Page, and Off-Page SEO to dominate search rankings and drive organic growth.',
     icon: 'Search',
   },
   {
@@ -45,6 +48,12 @@ export const SERVICES = [
     title: 'Maintenance & Support',
     description: 'Ongoing support, updates, and improvements to keep your digital presence running smoothly.',
     icon: 'Shield',
+  },
+  {
+    id: 5,
+    title: 'Graphic Design',
+    description: 'Clean brand visuals, social creatives, and web graphics that make your business look premium.',
+    icon: 'Palette',
   },
 ]
 
@@ -131,9 +140,11 @@ export const TESTIMONIALS = [
 
 // Social Links
 export const SOCIAL_LINKS = [
-  { name: 'LinkedIn', url: '#', icon: 'Linkedin' },
-  { name: 'Twitter', url: '#', icon: 'Twitter' },
-  { name: 'Email', url: '#', icon: 'Mail' },
+  { name: 'Facebook', url: 'https://www.facebook.com/share/18i2H9Jmx1/?mibextid=wwXIfr', icon: 'Facebook' },
+  { name: 'Instagram', url: 'https://www.instagram.com/thejynoro', icon: 'Instagram' },
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/company/jynoro', icon: 'Linkedin' },
+  { name: 'Email', url: 'mailto:info@jynoro.com', icon: 'Mail' },
+  { name: 'WhatsApp', url: 'https://wa.me/923361058649', icon: 'MessageSquare' },
 ]
 
 // Footer Links
@@ -149,8 +160,8 @@ export const FOOTER_LINKS = {
     { name: 'FAQ', href: '#' },
   ],
   legal: [
-    { name: 'Privacy Policy', href: '#' },
-    { name: 'Terms of Service', href: '#' },
-    { name: 'Cookie Policy', href: '#' },
+    { name: 'Privacy Policy', href: '/privacy' },
+    { name: 'Terms of Service', href: '/terms' },
+    { name: 'Cookie Policy', href: '/cookies' },
   ],
 }

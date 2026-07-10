@@ -12,6 +12,7 @@ export interface PortfolioProject {
   year: string
   client: string
   featured?: boolean
+  liveUrl?: string
 }
 
 export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
@@ -22,7 +23,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     category: 'Web Development',
     description: 'Full-stack e-commerce platform with payment integration',
     longDescription:
-      'A modern e-commerce experience built for scale — product catalog, secure checkout, order management, and an admin dashboard designed for day-to-day operations. Replace this copy with your final case study when ready.',
+      'A modern e-commerce experience built for scale â€” product catalog, secure checkout, order management, and an admin dashboard designed for day-to-day operations. Replace this copy with your final case study when ready.',
     highlights: [
       'Stripe payment integration',
       'Responsive product catalog',
@@ -46,7 +47,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     category: 'Custom Web App',
     description: 'Advanced analytics dashboard with real-time data',
     longDescription:
-      'A data-rich SaaS dashboard with real-time metrics, user management, and role-based access. Sample screenshots below — swap images and text with your production case study content later.',
+      'A data-rich SaaS dashboard with real-time metrics, user management, and role-based access. Sample screenshots below â€” swap images and text with your production case study content later.',
     highlights: [
       'Real-time analytics widgets',
       'Role-based access control',
@@ -63,98 +64,79 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     client: 'SaaS Startup',
   },
   {
-    id: 3,
-    slug: 'seo-blog-platform',
-    title: 'SEO Blog Platform',
+    id: 7,
+    slug: 'seo-growth-system',
+    title: 'SEO Growth System',
     category: 'SEO Optimized',
-    description: 'High-ranking content management system',
+    description: 'SEO analytics and optimization setup built to track clicks, impressions, rankings, and technical site health.',
     longDescription:
-      'Content platform optimized for search performance — fast pages, structured metadata, and a CMS workflow built for publishing teams. Update this section with your SEO results and content strategy.',
+      'A comprehensive SEO growth system designed to drive organic visibility through technical SEO foundations, keyword tracking, and data-driven optimization strategies.',
     highlights: [
       'Technical SEO foundations',
-      'MDX content workflow',
-      'Core Web Vitals focused',
+      'Keyword ranking tracking',
+      'Clicks & impressions analytics',
     ],
-    image: '/images/projects/project-3.svg',
+    image: '/images/projects/SEO growth.webp',
+    gallery: [
+      'https://picsum.photos/1200/750?random=701',
+      'https://picsum.photos/1200/750?random=702',
+      'https://picsum.photos/1200/750?random=703',
+    ],
+    technologies: ['Next.js', 'Contentlayer', 'Tailwind CSS'],
+    year: '2024',
+    client: 'SEO Growth System',
+    featured: true,
+  },
+  {
+    id: 3,
+    slug: 'duaa-al-khaleej',
+    title: 'Duaa Al Khaleej Co. Ltd',
+    category: 'Construction Website',
+    description: 'Corporate construction website designed to showcase services, build trust, and drive project inquiries.',
+    longDescription:
+      'A premium corporate website for Duaa Al Khaleej Co. Ltd, a Gulf-based leader in construction, logistics, and industrial solutions. The site showcases their extensive service portfolio, builds trust with high-quality visuals and case studies, and drives qualified project inquiries.',
+    highlights: [
+      'Service portfolio showcase',
+      'Trust-building design system',
+      'Project inquiry optimization',
+    ],
+    image: '/images/projects/Dua-al-kahleej.webp',
     gallery: [
       'https://picsum.photos/1200/750?random=301',
       'https://picsum.photos/1200/750?random=302',
       'https://picsum.photos/1200/750?random=303',
       'https://picsum.photos/1200/750?random=304',
     ],
-    technologies: ['Next.js', 'Contentlayer', 'Tailwind CSS'],
-    year: '2023',
-    client: 'Media Brand',
-  },
-  {
-    id: 4,
-    slug: 'mobile-app-website',
-    title: 'Mobile App Website',
-    category: 'Web Development',
-    description: 'Landing page for iOS and Android app',
-    longDescription:
-      'High-converting marketing site for a mobile app launch — clear value proposition, app store CTAs, and social proof sections. Replace gallery images with your app screens and brand assets.',
-    highlights: [
-      'App store conversion CTAs',
-      'Feature showcase sections',
-      'Mobile-first layout',
-    ],
-    image: '/images/projects/project-4.svg',
-    gallery: [
-      'https://picsum.photos/1200/750?random=401',
-      'https://picsum.photos/1200/750?random=402',
-      'https://picsum.photos/1200/750?random=403',
-    ],
-    technologies: ['Next.js', 'Framer Motion', 'Tailwind CSS'],
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
     year: '2024',
-    client: 'App Studio',
+    client: 'Duaa Al Khaleej Co. Ltd',
+    featured: true,
+    liveUrl: 'https://dakksa.com',
   },
   {
     id: 5,
-    slug: 'agency-website',
-    title: 'Agency Website',
-    category: 'Web Development',
-    description: 'Modern portfolio site for creative agency',
+    slug: 'brand-aviation',
+    title: 'Brand Aviation',
+    category: 'Marketing Website',
+    description: 'Creative marketing and brand activation website designed to showcase services, portfolio, and drive quote inquiries.',
     longDescription:
-      'Brand-forward agency website with portfolio filtering, team highlights, and lead capture. Use this template section to describe your creative direction and delivery process.',
+      'A creative marketing and brand activation website built for Brand Aviation, showcasing their full range of services, portfolio of campaigns, and driving quote inquiries through clear CTAs and compelling case studies.',
     highlights: [
-      'Portfolio case study grid',
-      'Service pages architecture',
-      'Contact funnel optimization',
+      'Creative portfolio showcase',
+      'Service-driven architecture',
+      'Quote inquiry optimization',
     ],
-    image: '/images/projects/project-5.svg',
+    image: '/images/projects/BrandAviation.webp',
     gallery: [
       'https://picsum.photos/1200/750?random=501',
       'https://picsum.photos/1200/750?random=502',
       'https://picsum.photos/1200/750?random=503',
-      'https://picsum.photos/1200/750?random=504',
     ],
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-    year: '2023',
-    client: 'Creative Agency',
-  },
-  {
-    id: 6,
-    slug: 'saas-startup',
-    title: 'SaaS Startup',
-    category: 'Custom Web App',
-    description: 'Complete solution for no-code platform',
-    longDescription:
-      'End-to-end web platform for a SaaS startup — marketing site, onboarding flow, and product landing pages. Add your metrics, screenshots, and stack details when the case study is finalized.',
-    highlights: [
-      'Multi-page marketing funnel',
-      'Pricing and signup flows',
-      'Scalable component system',
-    ],
-    image: '/images/projects/project-6.svg',
-    gallery: [
-      'https://picsum.photos/1200/750?random=601',
-      'https://picsum.photos/1200/750?random=602',
-      'https://picsum.photos/1200/750?random=603',
-    ],
-    technologies: ['Next.js', 'Supabase', 'Tailwind CSS'],
     year: '2024',
-    client: 'Startup Founder',
+    client: 'Brand Aviation',
+    featured: true,
+    liveUrl: 'https://brandaviation.pk/',
   },
 ]
 

@@ -1,18 +1,45 @@
 {
   "projects": [
     {
-      "id": 3,
-      "slug": "seo-blog-platform",
-      "title": "SEO Blog Platform",
+      "id": 7,
+      "slug": "seo-growth-system",
+      "title": "SEO Growth System",
       "category": "SEO Optimized",
-      "description": "High-ranking content management system",
-      "longDescription": "Content platform optimized for search performance — fast pages, structured metadata, and a CMS workflow built for publishing teams.",
+      "description": "SEO analytics and optimization setup built to track clicks, impressions, rankings, and technical site health.",
+      "longDescription": "A comprehensive SEO growth system designed to drive organic visibility through technical SEO foundations, keyword tracking, and data-driven optimization strategies.",
       "highlights": [
         "Technical SEO foundations",
-        "MDX content workflow",
-        "Core Web Vitals focused"
+        "Keyword ranking tracking",
+        "Clicks & impressions analytics"
       ],
-      "image": "/images/projects/project-3.svg",
+      "image": "/images/projects/SEO growth.webp",
+      "gallery": [
+        "https://picsum.photos/1200/750?random=701",
+        "https://picsum.photos/1200/750?random=702",
+        "https://picsum.photos/1200/750?random=703"
+      ],
+      "technologies": [
+        "Next.js",
+        "Contentlayer",
+        "Tailwind CSS"
+      ],
+      "year": "2024",
+      "client": "SEO Growth System",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "slug": "duaa-al-khaleej",
+      "title": "Duaa Al Khaleej Co. Ltd",
+      "category": "Construction Website",
+      "description": "Corporate construction website designed to showcase services, build trust, and drive project inquiries.",
+      "longDescription": "A premium corporate website for Duaa Al Khaleej Co. Ltd, a Gulf-based leader in construction, logistics, and industrial solutions. The site showcases their extensive service portfolio, builds trust with high-quality visuals and case studies, and drives qualified project inquiries.",
+      "highlights": [
+        "Service portfolio showcase",
+        "Trust-building design system",
+        "Project inquiry optimization"
+      ],
+      "image": "/images/projects/Dua-al-kahleej.webp",
       "gallery": [
         "https://picsum.photos/1200/750?random=301",
         "https://picsum.photos/1200/750?random=302",
@@ -21,94 +48,292 @@
       ],
       "technologies": [
         "Next.js",
-        "Contentlayer",
-        "Tailwind CSS"
-      ],
-      "year": "2023",
-      "client": "Media Brand",
-      "featured": true
-    },
-    {
-      "id": 4,
-      "slug": "mobile-app-website",
-      "title": "Mobile App Website",
-      "category": "Web Development",
-      "description": "Landing page for iOS and Android app",
-      "longDescription": "High-converting marketing site for a mobile app launch — clear value proposition, app store CTAs, and social proof sections.",
-      "highlights": [
-        "App store conversion CTAs",
-        "Feature showcase sections",
-        "Mobile-first layout"
-      ],
-      "image": "/images/projects/project-4.svg",
-      "gallery": [
-        "https://picsum.photos/1200/750?random=401",
-        "https://picsum.photos/1200/750?random=402",
-        "https://picsum.photos/1200/750?random=403"
-      ],
-      "technologies": [
-        "Next.js",
-        "Framer Motion",
+        "TypeScript",
         "Tailwind CSS"
       ],
       "year": "2024",
-      "client": "App Studio",
-      "featured": true
+      "client": "Duaa Al Khaleej Co. Ltd",
+      "featured": true,
+      "liveUrl": "https://dakksa.com"
     },
     {
       "id": 5,
-      "slug": "agency-website",
-      "title": "Agency Website",
-      "category": "Web Development",
-      "description": "Modern portfolio site for creative agency",
-      "longDescription": "Brand-forward agency website with portfolio filtering, team highlights, and lead capture.",
+      "slug": "brand-aviation",
+      "title": "Brand Aviation",
+      "category": "Marketing Website",
+      "description": "Creative marketing and brand activation website designed to showcase services, portfolio, and drive quote inquiries.",
+      "longDescription": "A creative marketing and brand activation website built for Brand Aviation, showcasing their full range of services, portfolio of campaigns, and driving quote inquiries through clear CTAs and compelling case studies.",
       "highlights": [
-        "Portfolio case study grid",
-        "Service pages architecture",
-        "Contact funnel optimization"
+        "Creative portfolio showcase",
+        "Service-driven architecture",
+        "Quote inquiry optimization"
       ],
-      "image": "/images/projects/project-5.svg",
+      "image": "/images/projects/BrandAviation.webp",
       "gallery": [
         "https://picsum.photos/1200/750?random=501",
         "https://picsum.photos/1200/750?random=502",
-        "https://picsum.photos/1200/750?random=503",
-        "https://picsum.photos/1200/750?random=504"
+        "https://picsum.photos/1200/750?random=503"
       ],
       "technologies": [
         "Next.js",
         "TypeScript",
         "Tailwind CSS"
       ],
-      "year": "2023",
-      "client": "Creative Agency",
+      "year": "2024",
+      "client": "Brand Aviation",
+      "featured": true,
+      "liveUrl": "https://brandaviation.pk/"
+    },
+    {
+      "id": 9,
+      "slug": "vapi-ai-voice-agent",
+      "title": "Vapi AI Voice Agent",
+      "category": "AI Automation",
+      "description": "AI automation workflow connecting webhooks, model responses, and messaging tools for faster customer communication",
+      "featuredDescription": "Automated AI agent workflow built to receive leads, process messages, and trigger smart follow-up actions.",
+      "longDescription": "An AI automation workflow built around Vapi-style voice and messaging automation, connecting lead intake, webhooks, model responses, and follow-up tools to help businesses respond faster and keep customer communication moving.",
+      "highlights": [
+        "Webhook-based lead intake",
+        "AI model response workflow",
+        "Smart messaging follow-up actions"
+      ],
+      "image": "/images/projects/vapi-ai-voice-agent.webp",
+      "gallery": [
+        "/images/projects/vapi-ai-voice-agent.webp"
+      ],
+      "technologies": [
+        "Vapi",
+        "Webhooks",
+        "AI Automation"
+      ],
+      "year": "2024",
+      "client": "Vapi AI Voice Agent",
       "featured": true
     },
     {
-      "id": 6,
-      "slug": "saas-startup",
-      "title": "SaaS Startup",
-      "category": "Custom Web App",
-      "description": "Complete solution for no-code platform",
-      "longDescription": "End-to-end web platform for a SaaS startup — marketing site, onboarding flow, and product landing pages.",
+      "id": 8,
+      "slug": "logitech-accessories-e-commerce-store",
+      "title": "LogiTech Accessories E-Commerce Store",
+      "category": "E-Commerce Website",
+      "description": "Bright e-commerce website built to showcase tech products, highlight offers, and drive product sales.",
+      "longDescription": "A bright e-commerce website designed for LogiTech accessories, built to showcase tech products, highlight seasonal offers, and create a clear shopping path that supports product discovery and sales.",
       "highlights": [
-        "Multi-page marketing funnel",
-        "Pricing and signup flows",
-        "Scalable component system"
+        "Product-focused homepage layout",
+        "Offer and sale promotion sections",
+        "Bright technology retail design"
       ],
-      "image": "/images/projects/project-6.svg",
+      "image": "/images/projects/logitech-accessories-ecommerce-store.webp",
       "gallery": [
-        "https://picsum.photos/1200/750?random=601",
-        "https://picsum.photos/1200/750?random=602",
-        "https://picsum.photos/1200/750?random=603"
+        "/images/projects/logitech-accessories-ecommerce-store.webp"
       ],
       "technologies": [
-        "Next.js",
-        "Supabase",
-        "Tailwind CSS"
+        "E-Commerce",
+        "Responsive Design",
+        "Product Showcase"
       ],
       "year": "2024",
-      "client": "Startup Founder",
+      "client": "LogiTech Accessories",
+      "featured": false
+    },
+    {
+      "id": 10,
+      "slug": "ai-task-management-agent",
+      "title": "AI Task Management Agent",
+      "category": "AI Automation",
+      "description": "Automation system that reads chat messages, identifies tasks, stores context, and updates Google Sheets in real time.",
+      "longDescription": "An AI task management automation system that reads incoming chat messages, identifies actionable tasks, stores useful context, and updates Google Sheets in real time so teams can keep work organized without manual tracking.",
+      "highlights": [
+        "Chat message task detection",
+        "Context and memory handling",
+        "Real-time Google Sheets updates"
+      ],
+      "image": "/images/projects/ai-task-management-agent.webp",
+      "gallery": [
+        "/images/projects/ai-task-management-agent.webp"
+      ],
+      "technologies": [
+        "AI Automation",
+        "Google Sheets",
+        "Workflow Automation"
+      ],
+      "year": "2024",
+      "client": "AI Task Management Agent",
+      "featured": false
+    },
+    {
+      "id": 11,
+      "slug": "company-policy-rag-model",
+      "title": "Company Policy RAG Model",
+      "category": "AI Automation",
+      "description": "AI knowledge workflow that loads company documents, creates embeddings, and stores policies in Pinecone for smarter answers.",
+      "longDescription": "An AI knowledge workflow that loads company policy documents, creates embeddings, and stores structured knowledge inside Pinecone so teams can retrieve smarter, more accurate answers from internal policy data.",
+      "highlights": [
+        "Company document loading workflow",
+        "Embedding generation for policy data",
+        "Pinecone vector storage setup"
+      ],
+      "image": "/images/projects/company-policy-rag-model.webp",
+      "gallery": [
+        "/images/projects/company-policy-rag-model.webp"
+      ],
+      "technologies": [
+        "RAG",
+        "Pinecone",
+        "AI Automation"
+      ],
+      "year": "2024",
+      "client": "Company Policy RAG Model",
+      "featured": false
+    },
+    {
+      "id": 12,
+      "slug": "food-ordering-mobile-app",
+      "title": "Food Ordering Mobile App",
+      "category": "Mobile App Design",
+      "description": "Mobile app UI designed for browsing meals, viewing offers, checking ingredients, and adding food items to cart.",
+      "longDescription": "A mobile food ordering app UI designed to help users browse meals, view promotional offers, inspect ingredients and meal details, and add food items to cart through a polished mobile-first experience.",
+      "highlights": [
+        "Meal browsing interface",
+        "Offer and discount screens",
+        "Ingredients and cart flow"
+      ],
+      "image": "/images/projects/food-ordering-mobile-app.webp",
+      "gallery": [
+        "/images/projects/food-ordering-mobile-app.webp"
+      ],
+      "technologies": [
+        "Mobile UI",
+        "Figma",
+        "App Design"
+      ],
+      "year": "2024",
+      "client": "Food Ordering Mobile App",
+      "featured": false
+    },
+    {
+      "id": 13,
+      "slug": "cravehub-food-delivery-app",
+      "title": "CraveHub Food Delivery App",
+      "category": "Mobile App Design",
+      "description": "Modern food delivery app UI designed for browsing restaurants, exploring offers, viewing meals, and quick checkout.",
+      "longDescription": "A modern food delivery mobile app UI designed for browsing restaurants, exploring promotional offers, viewing meal details, and completing checkout quickly through a clean, conversion-focused interface.",
+      "highlights": [
+        "Restaurant browsing experience",
+        "Offers and meal detail screens",
+        "Quick checkout app flow"
+      ],
+      "image": "/images/projects/cravehub-food-delivery-app.webp",
+      "gallery": [
+        "/images/projects/cravehub-food-delivery-app.webp"
+      ],
+      "technologies": [
+        "Mobile UI",
+        "Figma",
+        "App Design"
+      ],
+      "year": "2024",
+      "client": "CraveHub Food Delivery App",
       "featured": true
+    },
+    {
+      "id": 14,
+      "slug": "social-media-post-design",
+      "title": "Social Media Post Design",
+      "category": "Graphic Design",
+      "description": "Creative social media graphics designed for promotions, events, brand announcements, and high-engagement campaigns.",
+      "longDescription": "A collection of creative social media post designs made for promotions, events, brand announcements, product campaigns, and high-engagement digital marketing content across social platforms.",
+      "highlights": [
+        "Promotion and sale creatives",
+        "Event announcement graphics",
+        "Campaign-ready social visuals"
+      ],
+      "image": "/images/projects/social-media-post-design.webp",
+      "gallery": [
+        "/images/projects/social-media-post-design.webp"
+      ],
+      "technologies": [
+        "Graphic Design",
+        "Social Media",
+        "Brand Campaigns"
+      ],
+      "year": "2024",
+      "client": "Social Media Post Design",
+      "featured": false
+    },
+    {
+      "id": 15,
+      "slug": "university-admissions-flyer-design",
+      "title": "University Admissions Flyer Design",
+      "category": "Graphic Design",
+      "description": "Professional admissions flyer designed to promote academic programs, campus details, entry requirements, and student enrollment.",
+      "longDescription": "Professional admissions flyer designed to promote academic programs, campus details, entry requirements, and student enrollment.",
+      "highlights": [
+        "Academic program promotion",
+        "Campus and enrollment information",
+        "Print-ready admissions layout"
+      ],
+      "image": "/images/projects/university-admissions-flyer-design.webp",
+      "gallery": [
+        "/images/projects/university-admissions-flyer-design.webp"
+      ],
+      "technologies": [
+        "Graphic Design",
+        "Admissions Flyer",
+        "Print Design"
+      ],
+      "year": "2026",
+      "client": "University Admissions Flyer",
+      "featured": false
+    },
+    {
+      "id": 16,
+      "slug": "evowrap-window-film-flyer",
+      "title": "Evowrap Window Film Flyer",
+      "category": "Graphic Design",
+      "description": "Professional promotional flyer designed to showcase window film solutions, service benefits, finance options, and quote requests.",
+      "longDescription": "Professional promotional flyer designed to showcase window film solutions, service benefits, finance options, and quote requests.",
+      "highlights": [
+        "Window film solution showcase",
+        "Service benefits and finance options",
+        "Quote request-focused flyer layout"
+      ],
+      "image": "/images/projects/evowrap-window-film-flyer.webp",
+      "gallery": [
+        "/images/projects/evowrap-window-film-flyer.webp"
+      ],
+      "technologies": [
+        "Graphic Design",
+        "Promotional Flyer",
+        "Print Design"
+      ],
+      "year": "2026",
+      "client": "Evowrap Window Film Flyer",
+      "featured": false
+    },
+    {
+      "id": 17,
+      "slug": "expatsfinance-exhibition-banner-design",
+      "title": "ExpatsFinance Exhibition Banner Design",
+      "category": "Graphic Design",
+      "description": "Professional trade show banner set designed to promote financial planning, insurance, investment, and expat services.",
+      "longDescription": "Professional trade show banner set designed to promote financial planning, insurance, investment, and expat services.",
+      "highlights": [
+        "Trade show banner set presentation",
+        "Financial and insurance service promotion",
+        "Expat consultation-focused event branding"
+      ],
+      "image": "/images/projects/expatsfinance-exhibition-banner-design.webp",
+      "gallery": [
+        "/images/projects/expatsfinance-exhibition-banner-design.webp"
+      ],
+      "technologies": [
+        "Graphic Design",
+        "Exhibition Banner",
+        "Print Design"
+      ],
+      "year": "2026",
+      "client": "ExpatsFinance Exhibition Banner Design",
+      "featured": false
     }
   ]
 }

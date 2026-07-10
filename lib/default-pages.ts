@@ -6,10 +6,10 @@ export function defaultPages(): CmsPage[] {
       slug: 'services',
       path: '/services',
       title: 'Services',
-      focusKeyword: 'web development services',
-      seoTitle: 'Web Development Services | Jynoro',
+      focusKeyword: 'Jynoro services',
+      seoTitle: 'Jynoro Services | Web Development, AI Automation, SEO & Design',
       seoDescription:
-        'Professional web development, custom apps, SEO optimization, and ongoing support. Tailored digital solutions to grow your business online.',
+        'Explore Jynoro services for web development, custom web apps, AI automation, technical SEO, website maintenance, UI/UX, and graphic design.',
       sections: [
         {
           id: 'svc_header',
@@ -33,7 +33,7 @@ export function defaultPages(): CmsPage[] {
                 icon: 'Code2',
                 description: 'Modern, responsive websites built with the latest technologies and best practices.',
                 features: ['Responsive Design', 'Fast Loading Times', 'SEO Optimized', 'Mobile First Approach'],
-                price: 'Starting from $2,000',
+                price: 'Custom quote',
                 ctaLabel: 'Get Quote',
                 ctaHref: '/contact',
               },
@@ -42,7 +42,7 @@ export function defaultPages(): CmsPage[] {
                 icon: 'Zap',
                 description: 'Tailored web applications for specific business needs and complex requirements.',
                 features: ['Full Stack Development', 'Database Design', 'API Integration', 'Scalable Architecture'],
-                price: 'Starting from $5,000',
+                price: 'Custom quote',
                 ctaLabel: 'Get Quote',
                 ctaHref: '/contact',
               },
@@ -51,7 +51,7 @@ export function defaultPages(): CmsPage[] {
                 icon: 'Search',
                 description: 'Boost your online visibility with our comprehensive SEO strategies.',
                 features: ['Keyword Research', 'On-Page Optimization', 'Technical SEO', 'Content Strategy'],
-                price: 'Starting from $1,000/month',
+                price: 'Custom quote',
                 ctaLabel: 'Get Quote',
                 ctaHref: '/contact',
               },
@@ -161,7 +161,7 @@ export function defaultPages(): CmsPage[] {
       focusKeyword: 'web development consultation',
       seoTitle: 'Contact Jynoro | Free Web Development Consultation',
       seoDescription:
-        'Get a free consultation for your web project. Email hello@jynoro.com or send us a message — we respond within 24 hours.',
+        'Get a free consultation for your web project. Email info@jynoro.com or send us a message — we respond within 24 hours.',
       sections: [
         {
           id: 'cnt_header',
@@ -179,7 +179,7 @@ export function defaultPages(): CmsPage[] {
           enabled: true,
           data: {
             items: [
-              { icon: '📧', title: 'Email', value: 'hello@jynoro.com' },
+              { icon: '📧', title: 'Email', value: 'info@jynoro.com' },
               { icon: '💬', title: 'WhatsApp', value: 'Quick consultation' },
               { icon: '🚀', title: 'Response Time', value: 'Within 24 hours' },
             ],

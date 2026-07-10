@@ -1,30 +1,34 @@
 import type { Metadata } from 'next'
 import AboutPageContent from '@/components/pages/AboutPageContent'
-import CmsPageRenderer from '@/components/pages/CmsPageRenderer'
-import { getPageBySlug } from '@/lib/data-store'
-import { buildCmsMetadata } from '@/lib/cms-metadata'
 
-const fallbackMetadata: Metadata = {
-  title: 'About Us | Jynoro - Web Development Experts',
+export const metadata: Metadata = {
+  title: 'About Us — Meet the Team Behind Jynoro',
   description:
-    'Learn about Jynoro, meet Founder & CEO Jahanzaib Arshad, and discover our mission to help businesses grow through modern web solutions.',
-  keywords: 'about us, team, web development company, digital agency',
+    'Jynoro is a premium web development and AI integration agency founded by Jahanzaib Arshad. We specialize in full stack development, AI agent orchestration, and high-performance digital experiences for startups and enterprises worldwide.',
+  keywords: [
+    'about jynoro',
+    'web development agency',
+    'full stack development team',
+    'ai integration company',
+    'jahanzaib arshad',
+    'digital agency pakistan',
+    'react developers',
+    'next.js agency',
+    'custom software company',
+    'enterprise web solutions',
+  ],
   openGraph: {
-    title: 'About Us | Jynoro',
-    description: 'Learn about Jynoro and our mission to help businesses grow.',
+    title: 'About Us — Meet the Team Behind Jynoro',
+    description:
+      'Jynoro is a premium web development and AI integration agency. Full stack engineering, AI agents, and enterprise-grade digital solutions.',
     type: 'website',
     url: 'https://jynoro.com/about',
   },
-}
-
-export async function generateMetadata(): Promise<Metadata> {
-  const page = await getPageBySlug('about')
-  if (page) return buildCmsMetadata(page, fallbackMetadata)
-  return fallbackMetadata
+  alternates: {
+    canonical: '/about',
+  },
 }
 
 export default async function AboutPage() {
-  const page = await getPageBySlug('about')
-  if (page) return <CmsPageRenderer page={page} />
   return <AboutPageContent />
 }

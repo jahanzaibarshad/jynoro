@@ -80,8 +80,17 @@ export function useMagneticButton(
     const element = ref.current
     if (!element) return
 
+    let rect = element.getBoundingClientRect()
+
+    const updateRect = () => {
+      rect = element.getBoundingClientRect()
+    }
+
+    const handleMouseEnter = () => {
+      rect = element.getBoundingClientRect()
+    }
+
     const handleMouseMove = (e: MouseEvent) => {
-      const rect = element.getBoundingClientRect()
       const centerX = rect.left + rect.width / 2
       const centerY = rect.top + rect.height / 2
 
@@ -91,6 +100,12 @@ export function useMagneticButton(
       const distanceX = mouseX - centerX
       const distanceY = mouseY - centerY
       const distance = Math.sqrt(distanceX ** 2 + distanceY ** 2)
+
+      // Only perform calculations if mouse is close (within 300px)
+      if (distance > 300) {
+        element.style.transform = 'translate(0, 0)'
+        return
+      }
 
       const attraction = strength / (distance + 1)
 
@@ -103,12 +118,18 @@ export function useMagneticButton(
       element.style.transform = 'translate(0, 0)'
     }
 
+    element.addEventListener('mouseenter', handleMouseEnter)
     window.addEventListener('mousemove', handleMouseMove)
     window.addEventListener('mouseleave', handleMouseLeave)
+    window.addEventListener('scroll', updateRect, { passive: true })
+    window.addEventListener('resize', updateRect, { passive: true })
 
     return () => {
+      element.removeEventListener('mouseenter', handleMouseEnter)
       window.removeEventListener('mousemove', handleMouseMove)
       window.removeEventListener('mouseleave', handleMouseLeave)
+      window.removeEventListener('scroll', updateRect)
+      window.removeEventListener('resize', updateRect)
     }
-  }, [strength])
+  }, [strength, ref])
 }

@@ -25,14 +25,33 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   const seoDescription = post.seoDescription || post.excerpt
 
   return {
-    title: `${seoTitle} | Jynoro Blog`,
+    title: seoTitle,
     description: seoDescription,
-    keywords: post.focusKeyword,
+    keywords: [
+      post.focusKeyword || '',
+      post.category || '',
+      'jynoro blog',
+      'web development',
+      'ai agents',
+      'full stack development',
+    ].filter(Boolean),
     openGraph: {
       title: seoTitle,
       description: seoDescription,
       type: 'article',
       url: `https://jynoro.com/blog/${post.slug}`,
+      images: post.image ? [{ url: `https://jynoro.com${post.image}`, width: 1200, height: 630, alt: seoTitle }] : undefined,
+      publishedTime: post.date,
+      authors: ['Jynoro Engineering'],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: seoTitle,
+      description: seoDescription,
+      images: post.image ? [`https://jynoro.com${post.image}`] : undefined,
+    },
+    alternates: {
+      canonical: `/blog/${post.slug}`,
     },
   }
 }
